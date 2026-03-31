@@ -3,6 +3,7 @@ import { renderDashboard } from './dashboard.js';
 import { renderBrowse } from './browse.js';
 import { renderReport } from './report.js';
 import { renderSettings } from './settings.js';
+import { initScoreboard, updateScoreboardEvents } from './scoreboard.js';
 
 let currentEvents = [];
 let currentTab = 'dashboard';
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   initTabs();
   currentEvents = await loadEvents();
+  initScoreboard(currentEvents, document.getElementById('scoreboard'));
   switchTab('dashboard');
 
   // Register Service Worker
@@ -73,7 +75,7 @@ function switchTab(tab) {
 
 function onImport(events) {
   currentEvents = events;
-  // Refresh header with baby name
+  updateScoreboardEvents(events);
   const name = getSetting('babyName', '');
   document.getElementById('app-title').textContent = name ? `${name} 뷰어` : '기찬뷰어';
 }

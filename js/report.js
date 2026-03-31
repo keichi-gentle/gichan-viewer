@@ -66,12 +66,12 @@ function renderSummary(events, period) {
   const avgDaily = vals.length > 0 ? Math.round(vals.reduce((a,b)=>a+b,0) / vals.length) : 0;
 
   document.getElementById('rpt-summary').innerHTML = `
-    <div class="summary-row">
-      <div class="summary-card"><div class="label">오늘 수유</div><div class="value cat-feed">${todayCount}회</div></div>
+    <div class="summary-wrap">
+      <div class="summary-card"><div class="label">오늘 수유 횟수</div><div class="value cat-feed">${todayCount}회</div></div>
       <div class="summary-card"><div class="label">오늘 수유량</div><div class="value cat-feed">${todayTotal}ml</div></div>
       <div class="summary-card"><div class="label">오늘 배변</div><div class="value cat-bowel">소${summary.urineCount}/대${summary.stoolCount}</div></div>
-      <div class="summary-card"><div class="label">평균 수유텀</div><div class="value cat-feed">${avgInterval}</div></div>
       <div class="summary-card"><div class="label">일평균 수유량</div><div class="value cat-feed">${avgDaily}ml</div></div>
+      <div class="summary-card"><div class="label">평균 수유텀</div><div class="value cat-feed">${avgInterval}</div></div>
     </div>`;
 }
 

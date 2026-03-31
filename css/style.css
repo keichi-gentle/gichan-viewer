@@ -136,15 +136,14 @@ nav button svg { width: 22px; height: 22px; }
 .card-row .value { font-weight: 600; text-align: right; }
 .card-row .elapsed { color: var(--text-mid); font-size: 13px; margin-left: 8px; }
 
-/* ═══ Summary Cards (horizontal scroll) ═══ */
-.summary-row {
-  display: flex; gap: 8px; overflow-x: auto;
-  padding-bottom: 8px; margin-bottom: 12px;
-  -webkit-overflow-scrolling: touch;
+/* ═══ Summary Cards (wrap) ═══ */
+.summary-row, .summary-wrap {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 12px;
 }
 
 .summary-card {
-  flex: 0 0 auto; min-width: 110px;
+  flex: 1 1 calc(33.3% - 8px); min-width: 100px;
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: 12px; padding: 10px 14px; text-align: center;
 }
@@ -298,3 +297,58 @@ select, input[type="text"] {
 .cat-etc { color: var(--cat-etc); }
 .cat-urine { color: var(--cat-urine); }
 .cat-stool { color: var(--cat-stool); }
+
+/* ═══ Scoreboard (fixed top) ═══ */
+.scoreboard {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px 8px;
+}
+
+.sb-clock { text-align: center; margin-bottom: 8px; }
+.sb-time {
+  font-size: 28px; font-weight: 700;
+  color: var(--cat-system);
+  font-family: 'Consolas', 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+.sb-date { font-size: 14px; color: var(--cat-system); margin-top: 2px; }
+
+.sb-sections {
+  display: flex; align-items: stretch;
+  border-top: 1px solid var(--border);
+  padding-top: 8px; margin-bottom: 8px;
+}
+
+.sb-section { flex: 1; text-align: center; padding: 0 4px; }
+.sb-label { font-size: 12px; font-weight: 700; color: var(--text-light); margin-bottom: 3px; }
+.sb-value { font-size: 16px; font-weight: 700; }
+.sb-sub { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+
+.sb-divider {
+  width: 1px; background: var(--border);
+  margin: 0 2px; align-self: stretch;
+}
+
+.sb-progress {
+  height: 4px; background: var(--bg-dark);
+  border-radius: 2px; margin-top: 4px; overflow: hidden;
+}
+
+.sb-progress-fill {
+  height: 100%; background: var(--cat-feed);
+  border-radius: 2px; transition: width 1s linear;
+}
+
+.sb-urgent { color: var(--cat-health) !important; font-weight: 700; }
+
+@keyframes sb-blink { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.sb-urgent { animation: sb-blink 1s ease-in-out infinite; }
+
+.sb-bowel {
+  display: flex; border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.sb-bowel-half { flex: 1; text-align: center; }
+.sb-bowel-divider { width: 1px; background: var(--border); margin: 0 4px; }
