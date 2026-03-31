@@ -354,6 +354,6 @@ select, input[type="text"] {
 .sb-bowel-divider { width: 1px; background: var(--border); margin: 0 4px; }
 .sb-bowel-row {
   display: flex; align-items: baseline;
-  justify-content: space-between;
+  gap: 12px;
   padding: 1px 4px;
 }
