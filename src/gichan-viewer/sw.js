@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gichan-viewer-v1';
+const CACHE_NAME = 'gichan-viewer-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -11,6 +11,7 @@ const ASSETS = [
   './js/browse.js',
   './js/report.js',
   './js/settings.js',
+  './js/scoreboard.js',
   './lib/xlsx.mini.min.js',
   './lib/chart.umd.min.js',
   './manifest.json',

@@ -40,8 +40,14 @@
 - 확장 컬럼(K~Q) 없는 파일도 지원
 - 카테고리 레거시: "위생관리"←"위생", "건강관리"←"통증"
 
+## 배포 정보
+- 저장소: https://github.com/keichi-gentle/gichan-viewer (Public)
+- main 브랜치: 전체 프로젝트 (docs + src)
+- gh-pages 브랜치: PWA 소스만 (subtree push)
+- 접속 URL: https://keichi-gentle.github.io/gichan-viewer/
+- gh-pages 업데이트 명령: `git subtree push --prefix src/gichan-viewer origin gh-pages`
+
 ## 현재 진행 상태
-- 프로젝트 초기 설정 완료
-- 요구사항 정의 완료
-- 설계(PRD) 작성 완료
-- 구현 대기 중
+- PWA v1.0 배포 완료 (2026-03-30)
+- 스마트폰 정상 동작 확인 (홈 화면 추가 완료)
+- 실데이터 테스트 및 UI 피드백 대기 중

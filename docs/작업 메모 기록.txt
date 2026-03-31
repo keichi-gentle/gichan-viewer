@@ -30,3 +30,39 @@
 - docs/ — 요구사항, 설계 문서, 작업 기록
 - design/ — GUI 디자인 자료
 - git init 완료 (로컬 저장소)
+
+■ PWA 구현 완료
+- index.html: SPA 구조, 하단 탭바 4탭 (현황/조회/리포트/설정)
+- css/style.css: WPF 동일 색상팔레트 (Set 10 로우라이트), Dark/Light 테마, 모바일 레이아웃
+- js/app.js: 앱 초기화, 탭 전환, 테마 관리
+- js/calc.js: WPF CalculationService → JS 포팅 (수유/배변/위생 계산 로직)
+- js/excel-parser.js: SheetJS 기반 Excel A~Q 컬럼 파싱 (레거시 카테고리 호환)
+- js/storage.js: IndexedDB 데이터 캐시 + LocalStorage 설정 저장
+- js/dashboard.js: 현황탭 6개 카드 (수유/배변/위생/신체/건강/기타)
+- js/browse.js: 조회탭 필터/검색/페이지네이션/카테고리별 색상
+- js/report.js: 리포트탭 Chart.js 6종 차트 + 요약 카드 5개 (wrap 레이아웃)
+- js/settings.js: Excel Import/페이지건수/아기이름/테마 전환
+- manifest.json + sw.js: PWA 오프라인 캐시
+- icons: 192/512 PNG 아이콘 (G자 모양 틸 색상)
+- 외부 라이브러리: SheetJS 273KB + Chart.js 201KB
+
+■ 리포트 요약 카드 레이아웃 수정
+- "오늘 수유" → "오늘 수유 횟수" 명칭 변경
+- 스크롤바 방식(summary-row) → flex-wrap 방식(summary-wrap) 변경
+- 화면 너비에 맞게 자동 줄바꿈
+
+■ GitHub 배포 완료
+- 저장소: https://github.com/keichi-gentle/gichan-viewer (Public)
+- main 브랜치: 전체 프로젝트 (docs + src)
+- gh-pages 브랜치: PWA 소스만 (src/gichan-viewer/ subtree)
+- GitHub Pages 활성화: https://keichi-gentle.github.io/gichan-viewer/
+- 스마트폰 접속 + 홈 화면 추가 확인 완료
+
+■ 프로젝트 콜사인 논의 (2026-03-31)
+- 기존 WPF 프로젝트와 확장 PWA 프로젝트를 구분짓는 호칭 검토
+- 후보: 본체/뷰어(역할), 데스크톱/모바일(플랫폼), 기찬다이어리/기찬뷰어(프로젝트명), WPF/PWA(기술)
+- 결정: 당장은 미지정, 필요 시 다시 논의. 현재는 문맥상 자연 구분 가능
+
+■ 현재 상태
+- PWA v1.0 배포 완료, 스마트폰 정상 동작 확인
+- 실데이터 테스트 및 UI 피드백 대기 중
