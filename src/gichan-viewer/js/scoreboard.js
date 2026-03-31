@@ -115,16 +115,16 @@ function render(container) {
 
       <div class="sb-bowel">
         <div class="sb-bowel-half">
-          <div class="sb-label cat-urine">소변</div>
+          <div class="sb-label" style="color:var(--cat-urine)">소변</div>
           <div class="sb-value">${urineTime}</div>
-          <div class="sb-sub cat-urine">${formatShortElapsed(urineMs)}</div>
+          <div class="sb-sub" style="color:var(--cat-urine)">${formatShortElapsed(urineMs)}</div>
           <div class="sb-sub">오늘 ${summary.urineCount}회</div>
         </div>
         <div class="sb-bowel-divider"></div>
         <div class="sb-bowel-half">
-          <div class="sb-label cat-stool">대변</div>
+          <div class="sb-label" style="color:var(--cat-stool)">대변</div>
           <div class="sb-value">${stoolTime}</div>
-          <div class="sb-sub cat-stool">${formatShortElapsed(stoolMs)}</div>
+          <div class="sb-sub" style="color:var(--cat-stool)">${formatShortElapsed(stoolMs)}</div>
           <div class="sb-sub">오늘 ${summary.stoolCount}회</div>
         </div>
       </div>
