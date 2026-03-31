@@ -350,5 +350,10 @@ select, input[type="text"] {
   padding-top: 6px;
 }
 
-.sb-bowel-half { flex: 1; text-align: center; }
+.sb-bowel-half { flex: 1; }
 .sb-bowel-divider { width: 1px; background: var(--border); margin: 0 4px; }
+.sb-bowel-row {
+  display: flex; align-items: baseline;
+  justify-content: space-between;
+  padding: 1px 4px;
+}
