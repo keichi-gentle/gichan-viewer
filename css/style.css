@@ -350,10 +350,6 @@ select, input[type="text"] {
   padding-top: 6px;
 }
 
-.sb-bowel-half { flex: 1; display: flex; flex-direction: column; align-items: center; }
+.sb-bowel-half { flex: 1; display: flex; justify-content: center; gap: 12px; }
 .sb-bowel-divider { width: 1px; background: var(--border); margin: 0 4px; }
-.sb-bowel-row {
-  display: flex; align-items: baseline;
-  gap: 12px;
-  padding: 1px 4px;
-}
+.sb-bowel-col { text-align: center; }
